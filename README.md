@@ -64,7 +64,9 @@ deployment-2048-bdbddc878-x6kkw   1/1     Running   0          105s
 
 7.
 oidc_id=$(aws eks describe-cluster --name game-2048 --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)
+
 aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4
+
 eksctl utils associate-iam-oidc-provider --cluster game-2048 --approve
 
 ```
@@ -119,8 +121,8 @@ AWS Load Balancer controller installed!
 
 ```
 NAME                                           READY   STATUS    RESTARTS   AGE
-aws-load-balancer-controller-5c875989b-4vg4q   0/1     Running   0          51s
-aws-load-balancer-controller-5c875989b-cqs86   0/1     Running   0          51s
+aws-load-balancer-controller-5c875989b-4vg4q   1/1     Running   0          51s
+aws-load-balancer-controller-5c875989b-cqs86   1/1     Running   0          51s
 .
 .
 ```
