@@ -1,6 +1,6 @@
 # eks-game2048-project
 
-## Deploying Game2048 application in AWS EKS
+## Deploy Game2048 application in AWS EKS
 
 1. eksctl create cluster --name game-2048 --region ap-south-1 --fargate
 
